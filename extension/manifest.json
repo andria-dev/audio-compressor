@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "name": "Audio Compressor",
+  "description": "Compress audio to make sound volumes more even.",
+  "permissions": ["tabs", "storage"],
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["scripts/content-script.js"]
+    }
+  ],
+  "icons": {
+    "16": "icons/logo-mid-active-16.png",
+    "32": "icons/logo-mid-active-32.png",
+    "48": "icons/logo-mid-active-48.png",
+    "64": "icons/logo-mid-active-64.png",
+    "128": "icons/logo-mid-active-128.png"
+  },
+  "action": {
+    "browser_style": true,
+    "default_icon": {
+      "16": "icons/logo-mid-16.png",
+      "32": "icons/logo-mid-32.png",
+      "48": "icons/logo-mid-48.png",
+      "64": "icons/logo-mid-64.png",
+      "128": "icons/logo-mid-128.png"
+    },
+    "default_popup": "popup/popup.html",
+    "theme_icons": [
+      {
+        "dark": "icons/logo-dark.svg",
+        "light": "icons/logo-light.svg",
+        "size": 16
+      }
+    ]
+  }
+}
