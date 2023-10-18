@@ -1,40 +1,41 @@
 {
-  "name": "audio-compressor",
-  "version": "1.0.0",
-  "private": true,
-  "repository": "https://github.com/andria-dev/audio-compressor.git",
-  "author": "Andria Brown <andria_girl@pm.me>",
-  "license": "MIT",
-  "source": [
-    "extension/popup/popup.html",
-    "extension/service-worker.js",
-    "extension/scripts/content-script.js"
-  ],
-  "target": "last 2 Chrome versions",
-  "staticFiles": [
-    {
-      "staticPath": "extension/manifest.json"
-    },
-    {
-      "staticPath": "extension/icons",
-      "staticOutPath": "icons"
-    }
-  ],
-  "scripts": {
-    "build": "rimraf dist && parcel build",
-    "watch:extension": "rimraf dist && parcel watch",
-    "watch:dist": "mv3-hot-reload",
-    "dev": "concurrently yarn:watch:*"
-  },
-  "devDependencies": {
-    "concurrently": "^8.2.1",
-    "mv3-hot-reload": "^0.2.7",
-    "parcel": "^2.9.3",
-    "parcel-reporter-static-files-copy": "^1.5.3",
-    "rimraf": "^5.0.5"
-  },
-  "dependencies": {
-    "lit": "^3.0.0-pre.1",
-    "selectlist-polyfill": "^0.3.0"
-  }
+	"name": "audio-compressor",
+	"version": "1.0.0",
+	"private": true,
+	"repository": "https://github.com/andria-dev/audio-compressor.git",
+	"author": "Andria Brown <andria_girl@pm.me>",
+	"license": "MIT",
+	"source": [
+		"extension/popup/popup.html",
+		"extension/service-worker.js",
+		"extension/scripts/content-script.js"
+	],
+	"target": "last 2 Chrome versions",
+	"staticFiles": [
+		{
+			"staticPath": "extension/manifest.json"
+		},
+		{
+			"staticPath": "extension/icons",
+			"staticOutPath": "icons"
+		}
+	],
+	"scripts": {
+		"build": "rimraf dist && parcel build",
+		"watch:extension": "rimraf dist && parcel watch",
+		"watch:dist": "mv3-hot-reload",
+		"dev": "concurrently yarn:watch:*"
+	},
+	"devDependencies": {
+		"concurrently": "^8.2.1",
+		"mv3-hot-reload": "^0.2.7",
+		"parcel": "^2.9.3",
+		"parcel-reporter-static-files-copy": "^1.5.3",
+		"prettier": "^3.0.3",
+		"rimraf": "^5.0.5"
+	},
+	"dependencies": {
+		"lit": "^3.0.0-pre.1",
+		"selectlist-polyfill": "^0.3.0"
+	}
 }
