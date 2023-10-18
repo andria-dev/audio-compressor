@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../fonts/NunitoSans/VariableNunitoSans.ttf") format("truetype");
+}
+
+:root {
+  view-transition-name: none;
+}
+
+body {
+  margin: 0;
+  padding: 25px;
+  background: #e9eff8;
+}
+fieldset {
+  border: none;
+}
+label,
+legend,
+input[type="number"] {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@property --border-gradient-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@property --border-gradient-first-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: deepskyblue;
+}
+@property --border-gradient-first-stop {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --border-gradient-second-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: yellowgreen;
+}
+@property --border-gradient-second-stop {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+main {
+  display: block;
+  width: min-content;
+  & > :not(:last-child) {
+    margin-bottom: 50px;
+  }
+}
+
+.profile-settings {
+  display: grid;
+  grid-template: repeat(3, 55px) / repeat(5, 126px);
+  gap: 16px 16px;
+
+  & > .profile-settings__row {
+    display: contents;
+    &:first-child > * {
+      grid-row: 1;
+    }
+    &:nth-child(2) > * {
+      grid-row: 2;
+    }
+    &:nth-child(3) > * {
+      grid-row: 3;
+    }
+    & > :is(label, legend):first-child {
+      text-align: end;
+      align-self: center;
+    }
+  }
+
+  & .dropdown {
+    grid-column: span 2;
+  }
+  & .button-group {
+    grid-column: span 4;
+  }
+}
+
+.audio-compressor-settings {
+  display: flex;
+  gap: 12px;
+  margin-inline: auto;
+  & > .audio-compressor-settings__column {
+    display: block;
+    margin-block-start: auto;
+
+    & > * {
+      margin-inline: auto;
+    }
+    & > *:not(:last-child) {
+      margin-block-end: 10px;
+    }
+    & > label {
+      display: block;
+      user-select: none;
+      text-align: center;
+      width: max-content;
+    }
+  }
+}

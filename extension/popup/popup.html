@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="popup.css" />
+  <link rel="stylesheet" href="components/number-field.css">
+  <script defer type="module" src="popup.js"></script>
+</head>
+
+<body>
+  <main>
+
+    <div class="profile-settings">
+      <div class="profile-settings__row">
+        <label for="active-profile">Active Profile</label>
+        <x-selectlist name="active-profile" id="active-profile">
+          <x-option value="default">Default</x-option>
+        </x-selectlist>
+        <button type="button" aria-label="Remove the active profile" disabled>Remove</button>
+      </div>
+
+      <div class="profile-settings__row">
+        <label for="new-profile">Create a Profile</label>
+        <x-selectlist name="new-profile" id="new-profile">
+        </x-selectlist>
+        <button type="button" aria-label="Create the new profile">Create</button>
+      </div>
+
+      <fieldset class="profile-settings__row">
+        <legend>Pick a Preset</legend>
+        <div id="preset-buttons" class="button-group">
+          <button type="button">Disabled</button>
+          <button type="button">None</button>
+          <button type="button">Low</button>
+          <button type="button">Medium</button>
+          <button type="button">High</button>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="audio-compressor-settings">
+      <div class="audio-compressor-settings__column">
+        <switch-button id="audio-compressor-switch"></switch-button>
+        <label for="audio-compressor-switch">Audio Compressor</label>
+      </div>
+
+      <div class="audio-compressor-settings__column">
+        <value-slider name="threshold-slider" id="threshold-slider" min="-100" max="0" value="0" step=".1" orient="vertical" class="slider" aria-labelledby="threshold-label"></value-slider>
+        <input type="number" name="threshold-number" id="threshold-number" min="-100" max="0" value="0" step=".1" class="number-field">
+        <label for="threshold-number" id="threshold-label">Threshold</label>
+      </div>
+
+      <div class="audio-compressor-settings__column">
+        <value-slider name="knee-slider" id="knee-slider" min="0.1" max="40" value="30" step=".1" orient="vertical" class="slider" aria-labelledby="knee-label"></value-slider>
+        <input type="number" name="knee-number" id="knee-number" min="0.1" max="40" value="30" step=".1" class="number-field">
+        <label for="knee-number" id="knee-label">Knee</label>
+      </div>
+
+      <div class="audio-compressor-settings__column">
+        <value-slider name="ratio-slider" id="ratio-slider" min="1" max="20" value="12" step=".1" orient="vertical" class="slider" aria-labelledby="ratio-label"></value-slider>
+        <input type="number" name="ratio-number" id="ratio-number" min="1" max="20" value="12" step=".1" class="number-field">
+        <label for="ratio-number" id="ratio-label">Ratio</label>
+      </div>
+
+      <div class="audio-compressor-settings__column">
+        <value-slider name="attack-slider" id="attack-slider" min="0.001" max="1" value=".003" step=".001" orient="vertical" class="slider" aria-labelledby="attack-label"></value-slider>
+        <input type="number" name="attack-number" id="attack-number" min="0.001" max="1" value=".003" step=".001" class="number-field">
+        <label for="attack-number" id="attack-label">Attack</label>
+      </div>
+
+      <div class="audio-compressor-settings__column">
+        <value-slider name="release-slider" id="release-slider" min="0.001" max="1" value=".25" step=".001" orient="vertical" class="slider" aria-labelledby="release-label"></value-slider>
+        <input type="number" name="release-number" id="release-number" min="0.001" max="1" value=".25" step=".001" class="number-field">
+        <label for="release-number" id="release-label">Release</label>
+      </div>
+
+      <div class="audio-compressor-settings__column">
+        <value-slider name="boost-slider" id="boost-slider" min="0" max="1" value="0" step=".01" orient="vertical" class="slider" aria-labelledby="boost-label"></value-slider>
+        <input type="number" name="boost-number" id="boost-number" min="0" max="1" value="0" step=".01" class="number-field">
+        <label for="boost-number" id="boost-label">Boost</label>
+      </div>
+    </div>
+
+  </main>
+</body>
+
+</html>

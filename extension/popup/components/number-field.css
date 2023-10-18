@@ -1,0 +1,61 @@
+input[type="number"].number-field {
+  position: relative;
+  box-sizing: border-box;
+  width: 75px;
+  height: 28px;
+  padding: 6px 0px 6px 7px;
+  flex-shrink: 0;
+
+  border-radius: 4px;
+  border: 2px solid transparent;
+
+  --border-gradient-angle: 131deg;
+  --border-gradient-first-color: #a1b3c4;
+  --border-gradient-first-stop: 23.34%;
+  --border-gradient-second-color: #c3d9ee;
+  --border-gradient-second-stop: 75.58%;
+
+  background: url("data:image/svg+xml,%3Csvg width='16' height='28' viewBox='0 0 16 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 16L8 19L5 16' stroke='%232B3845' stroke-linecap='round'/%3E%3Cpath d='M11 11L8 8L5 11' stroke='%232B3845' stroke-linecap='round'/%3E%3C/svg%3E%0A"),
+    linear-gradient(229deg, #fff 29.45%, #e4f0fa 69.91%) padding-box,
+    linear-gradient(
+        var(--border-gradient-angle),
+        var(--border-gradient-first-color) var(--border-gradient-first-stop),
+        var(--border-gradient-second-color) var(--border-gradient-second-stop)
+      )
+      border-box;
+
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+
+  box-shadow: 0px 1px 9px 0px #c8d4e2 inset, 0px 3px 7px 0px #c9d3e2 inset,
+    -5px -4px 5px 0px rgba(255, 255, 255, 0.75) inset;
+  transition: --border-gradient-angle 0.2s ease-out,
+    --border-gradient-first-color 0.2s ease-out,
+    --border-gradient-first-stop 0.2s ease-out,
+    --border-gradient-second-color 0.2s ease-out,
+    --border-gradient-second-stop 0.2s ease-out;
+
+  &:hover {
+    --border-gradient-first-color: #91aeca;
+    --border-gradient-second-color: #91c3f2;
+  }
+  &:focus {
+    outline: none;
+    --border-gradient-first-color: #949cea;
+    --border-gradient-second-color: #7881e3;
+  }
+
+  &::-webkit-inner-spin-button {
+    opacity: 0 !important;
+    background: transparent !important;
+    border-width: 0px;
+    margin: 0;
+    width: 16px;
+    height: 75px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1 !important;
+    }
+  }
+}
