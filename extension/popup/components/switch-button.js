@@ -141,10 +141,10 @@ export class SwitchButton extends LitElement {
 		this.enabled = false;
 	}
 
-	#handleClick() {
+	#handleClick = () => {
 		this.enabled = !this.enabled;
-	}
-	#handleKeyUp({ key }) {
+	};
+	#handleKeyUp = ({ key }) => {
 		switch (key) {
 			case " ":
 			case "Enter":
@@ -153,7 +153,7 @@ export class SwitchButton extends LitElement {
 			default:
 				break;
 		}
-	}
+	};
 
 	connectedCallback() {
 		super.connectedCallback();
